@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IF( MVC ){ alert("YES!")</title>
+</head>
+<body>
+    
+    <div id="output"></div>
+
+<script>
+ const outputDiv = document.getElementById("output");
+ let counter = 0;
+ let hiddenMessage = "";
+
+ drawHTML();
+ function drawHTML(){
+    let html = `
+    ${hiddenMessage}
+    <br>
+    <button onclick="clickCounter()">Click Me 3 times!</button>
+    `;
+
+    outputDiv.innerHTML = html;
+
+ }
+
+ function clickCounter(){
+    counter++;
+    if(counter == 3){
+        hiddenMessage = " Nice Clicks! ";
+        drawHTML();
+        counter = 0;
+    }
+ }
+
+</script>
+</body>
+</html>
