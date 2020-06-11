@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Everythis</title>
+</head>
+<body>
+    <div id="output"></div>
+
+    <script>
+        const outputDiv = document.getElementById("output");
+        let containerArray = [];
+        let showArray = [];
+
+        showOption();
+        function showOption(){
+
+        let html = `
+            <button onclick="addOption(this)">1</button>
+            <button onclick="addOption(this)">2</button> 
+            <button onclick="addOption(this)">3</button> <br>
+            <button onclick="addOption(this)">4</button>
+            <button onclick="addOption(this)">5</button> 
+            <button onclick="addOption(this)">6</button> <br>
+
+            <button onclick="filterOptions()"> I have selected Enough. Show me the even numbers!</button>
+            <br>
+            ${showArray}
+            `;
+            outputDiv.innerHTML = html;
+        }
+
+       function addOption(selectedOption){
+        containerArray.push(parseInt(selectedOption.innerHTML));
+       }   
+
+       function filterOptions(){
+           for(let i = 0; i < containerArray.length; i++){
+               if(containerArray[i] % 2 == 0){
+                   showArray.push(containerArray[i]);
+               }
+           }
+           showOption();
+       } 
+
+
+    </script>
+</body>
+</html>
