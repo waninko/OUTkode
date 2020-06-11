@@ -11,7 +11,7 @@
     <script>
         const outputDiv = document.getElementById("output");
         let containerArray = [];
-        let showArray = [];
+        let evensArray = [];
 
         showOption();
         function showOption(){
@@ -26,7 +26,7 @@
 
             <button onclick="filterOptions()"> I have selected Enough. Show me the even numbers!</button>
             <br>
-            ${showArray}
+            ${evensArray}
             `;
             outputDiv.innerHTML = html;
         }
@@ -38,7 +38,7 @@
        function filterOptions(){
            for(let i = 0; i < containerArray.length; i++){
                if(containerArray[i] % 2 == 0){
-                   showArray.push(containerArray[i]);
+                   evensArray.push(containerArray[i]);
                }
            }
            showOption();
